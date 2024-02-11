@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- This displays all the books associated with the user -->
+{% block content %}
+<section>
+    <div class="row">
+        {% for book in user_books %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static book.image %}" alt="{{ book.title }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+                    <p class="card-text"><strong>ISBN:</strong> {{ book.isbn }}</p>
+                    <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+        <a class="btn btn-primary" href="{% url 'booking_list' %}">Back to Dashboard</a>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div class="header">
+        <div class="container">
+            {% if user.is_authenticated %}          
+            <h3><p>Welcome, {{ user.username }} </p></h3>
+            {% endif %}
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="nav">
+            <ul>
+                <li><a class="a" href="{% dashboard %}"> Dashboard </a></li>
+                <li><a href="{% booking_list %}"> Booking </a></li>
+                <li><a href="{% user_books %}"> My Books </a></li>
+                <li><a href="{% profile %}"> Profile  </a></li>
+                <li><a href="{% logout %}"> logout  </a></li>
+            </ul>
+        </div>
+
+        <!-- Main container -->
+        
+    </div>
+
+    <div class="footer">
+        <p> &copy; Kakashi.com </p>
+    </div>
+</section>
+{% endblock content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>Your courses: {{ student }}</p>
+
+    <!-- Search Form -->
+    <form method="GET" action="">
+        <label for="genre">Search by Genre:</label>
+        <input type="text" name="genre" id="genre" value="{{ genre_query }}" placeholder="Enter genre">
+        
+        <label for="title">Search by Title:</label>
+        <input type="text" name="title" id="title" value="{{ title_query }}" placeholder="Enter title">
+        
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Available Books -->
+    <h2>Available Books:</h2>
+    <ul>
+        {% for book in available_books %}
+            <li>{{ book.title }} (Genre: {{ book.genre }}, Status: {{ book.status }})</li>
+        {% empty %}
+            <li>No available books found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

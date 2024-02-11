@@ -1,0 +1,188 @@
+/* static/css/custom.css */
+
+.custom-login-form {
+    background-size: cover;
+    color: rgb(14, 14, 14); /* Text color */
+    font-family:  sans-serif; /* Custom font */
+  }
+  
+  /* Style input fields */
+  .custom-login-form input[type="text"],
+  .custom-login-form input[type="password"] {
+    background-color: rgb(210, 236, 234); /* Semi-transparent background */
+    color: rgb(8, 8, 8); /* Text color */
+    border: rounded;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  /* Style for the task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color:#a5c8ed ;
+  margin: 0px;
+}
+.header{
+  padding: 20px;
+  text-align:center;
+  background-color: aqua;
+}
+.header h1{
+  font-size: 24px;
+}
+.container{
+  width: 100%;
+  
+}
+.nav ,.section{
+  float:left;
+  padding: 20px;
+  min-height: 30cm;
+  box-sizing: border-box;
+}
+.nav {
+  overflow: hidden;
+  background-color: aquamarine;
+}
+.section{
+  width:80%;
+
+}
+.nav ul{
+  list-style:none;
+  line-height: 24px;
+  padding:0px;
+}
+.nav ul li a{
+  float: left;
+  display:block;
+  text-align:center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color:#333;
+}
+.clearfix::after{
+  content:".";
+  display:block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#cars{
+  padding: 50px;
+  background-color: lightblue;
+  color:black;
+  text-align: center;
+}
+#identity{
+  padding: 50px;
+  background-color: rgb(112, 68, 199);
+  color:black;
+  text-align: center;
+}
+.footer{
+  background: #acb3b9;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Apply styles to the login form wrapper */
+.login-form-wrapper {
+  width: 300px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Style the login form */
+.custom-login-form {
+  margin-top: 10px;
+}
+
+/* Style the login button */
+.login-button {
+  margin-top: 10px;
+}
+
+
+/* Style for each task item */
+.task-item {
+  margin-bottom: 20px;
+  border: 1px solid #0e0c0c;
+  padding: 10px;
+  background-color: #da6363;
+  border-radius: 10px;
+  margin-right: flex; /* Increase right margin to add space */
+  margin-left: flex; /* Increase left margin to add space */
+}
+
+.task-item a {
+  color: rgb(78, 19, 187); /* Change the link color to blue */
+  text-decoration: none; /* Remove underline from links */
+  margin-right: 10px; /* Add a margin between links */
+}
+
+.b {
+  color: rgb(225, 219, 221); /* Change the link color to blue */
+}
+
+.login-button{
+  color: black;
+  padding: 1px;
+  background-color: rgb(46, 166, 217);
+  border-radius: 10px ;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  min-width: 6rem;
+  text-align: center;
+}
+
+/* Splitting the screen */
+/* Splitting the screen */
+.split {
+  display: flex;
+  justify-content: space-between;
+   /* Add margin around the split layout */
+}
+
+.left {
+  width: 50%;
+  padding-right: 2rem; /* Add padding to the right to separate from the tasks */
+}
+
+
+.right {
+  width: 40%;
+}
+
+/* Add this to your CSS file or <style> tag */
+.background-image-container {
+  background-image: url("{% static 'images/Home.jpeg' %}");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Set the height to cover the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the overlay color and opacity */
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- This is displayed as a welcome page -->
+{% block content %}
+<div class="background-image-container">
+    <div class="overlay">
+        <h1>Library.</h1>
+        <p>All the secrets of the world are contained in books.</p>
+        <a class="btn btn-primary cta" href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+{% endblock content %}

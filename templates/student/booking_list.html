@@ -1,0 +1,30 @@
+{% extends 'base.html' %}  <!-- Extends base template -->
+
+{% block content %}
+<section>
+    <header class="header">
+        <div class="container">
+            {% if user.is_authenticated %}          
+            <h3><p>Welcome, {{ user.username }} </p></h3>
+            {% endif %}
+        </div>
+
+        <div class="container">
+            <h2>Available Books for Booking</h2>
+            <div class="row">
+                {% for book in available_books %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="{{ book.image.url }}" class="card-img-top" alt="Book Cover">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ book.title }}</h5>
+                                <p class="card-text">{{ book.author }}</p>
+                                <a href="{% url 'book_booking' book.id %}" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</section>        
+{% endblock %}
